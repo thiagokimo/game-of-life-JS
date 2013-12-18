@@ -1,0 +1,27 @@
+body {
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 40px;
+}
+
+canvas {
+  width: 960px;
+  height: 400px;
+}
+
+section {
+  border: 7px solid #ddd;
+  height: 400px;
+  margin: 2em 0;
+  position: relative;
+  overflow: hidden;
+  width: 960px;
+  box-shadow: 0 0 15px 0 #555;
+}
