@@ -28,7 +28,7 @@ describe("The Game of Life", function () {
 
       world.rotate();
 
-      expect(world.get(1,1).alive).toBe(false);
+      expect(world.get(1,1).alive).toBeFalsy();
     });
   });
 
@@ -45,7 +45,7 @@ describe("The Game of Life", function () {
 
       world.rotate();
 
-      expect(world.get(1,1).alive).toBe(true);
+      expect(world.get(1,1).alive).toBeTruthy();
     });
   });
 
@@ -60,7 +60,7 @@ describe("The Game of Life", function () {
 
       world.rotate();
 
-      expect(world.get(1,1).alive).toBe(false);
+      expect(world.get(1,1).alive).toBeFalsy();
     });
 
     it("a cell surrounded by live neighbours must die", function() {
@@ -68,7 +68,7 @@ describe("The Game of Life", function () {
 
       world.rotate();
 
-      expect(world.get(1,1).alive).toBe(false);
+      expect(world.get(1,1).alive).toBeFalsy();
     });
   });
 
@@ -85,7 +85,7 @@ describe("The Game of Life", function () {
 
       world.rotate();
 
-      expect(world.get(1,1).alive).toBe(true);
+      expect(world.get(1,1).alive).toBeTruthy();
     });
   });
 });

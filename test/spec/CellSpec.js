@@ -9,8 +9,8 @@ describe("Cell", function () {
   it("must have coordinates", function () {
     var cell = new Cell(1,1);
 
-    expect(cell.x).toBeDefined();
-    expect(cell.y).toBeDefined();
+    expect(Object.prototype.toString.call(cell.x)).toEqual('[object Number]');
+    expect(Object.prototype.toString.call(cell.y)).toEqual('[object Number]');
   });
 
   it("can die", function () {
@@ -18,16 +18,15 @@ describe("Cell", function () {
 
     cell.die();
 
-    expect(cell.alive).toBe(false);
+    expect(cell.alive).toBeFalsy();
   });
 
   it("can reborn", function () {
     var cell = new Cell(1,1);
 
     cell.die();
-    expect(cell.alive).toBe(false);
-
     cell.reborn();
-    expect(cell.alive).toBe(true);
+
+    expect(cell.alive).toBeTruthy();
   });
 });

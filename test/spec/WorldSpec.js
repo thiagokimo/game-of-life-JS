@@ -2,7 +2,7 @@ describe("World", function () {
   it("must have an array of cells", function() {
     var world = new World(3,3);
 
-    expect(world.getCells()).toBeDefined();
+    expect(Object.prototype.toString.call(world.getCells())).toEqual("[object Array]");
   });
 
   it("must have a board of cells", function () {
@@ -31,16 +31,15 @@ describe("World", function () {
 
     var deadCell = world.get(1,1);
 
-    expect(deadCell.alive).toBe(false);
+    expect(deadCell.alive).toBeFalsy();
   });
 
   it("must revive a cell at a given position", function() {
     var world = new World(3,3);
 
     world.kill(1,1);
-    expect(world.get(1,1).alive).toBe(false);
-
     world.revive(1,1);
-    expect(world.get(1,1).alive).toBe(true);
+
+    expect(world.get(1,1).alive).toBeTruthy();
   });
 });
